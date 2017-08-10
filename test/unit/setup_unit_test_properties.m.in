@@ -1,0 +1,14 @@
+function [obj] = setup_unit_test_properties(obj)
+  if ismethod(obj, 'PreSetup')
+      obj = PreSetup(obj);
+  end
+  obj.MexName = '@MEX_NAME@';
+  obj.MexVersion = '@MEX_VERSION@';
+  obj.MexVersionMajor = [@PROJECT_VERSION_MAJOR@];
+  obj.MexVersionMinor = [@PROJECT_VERSION_MINOR@];
+  obj.MexVersionPatch = [@PROJECT_VERSION_PATCH@];
+  obj.MexVersionTweak = [@PROJECT_VERSION_TWEAK@];
+  if ismethod(obj, 'PostSetup')
+    obj = PostSetup(obj);
+  end
+end

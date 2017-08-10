@@ -1,0 +1,5 @@
+@PACKAGE_INIT@
+
+set_and_check(@target_NAME@_INCLUDE_DIRS "@PACKAGE_@target_NAME@_INCLUDE_DIRS@")
+
+include("${CMAKE_CURRENT_LIST_DIR}/@target_NAME@.cmake")
